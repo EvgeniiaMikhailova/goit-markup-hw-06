@@ -234,21 +234,23 @@ h3 {
 }
 
 .order {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 0;
+
   background-color: var(--accent-color);
   color: var(--primary-bgc);
   letter-spacing: 0.06em;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.8;
-  text-align: center;
-  cursor: pointer;
 
-  display: inline-block;
-  min-width: 200px;
-  height: 50px;
-  padding: 10px;
-  border-radius: 4px;
-  border: 0;
+  cursor: pointer;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -290,15 +292,26 @@ h3 {
 
   min-width: 528px;
   min-height: 580px;
-  padding: 8px;
+  padding: 40px;
+
+  font-size: 12px;
+  line-height: 1.66;
+  letter-spacing: 0.01em;
+  text-align: start;
 
   background-color: var(--primary-bgc);
+  color: var(--primary-text-color);
 
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close {
   position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   top: 8px;
   right: 8px;
   width: 30px;
@@ -306,10 +319,146 @@ h3 {
   cursor: pointer;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
-  background-image: url(../images/hero/vector.svg);
-  background-repeat: no-repeat;
-  background-position: center;
+}
+
+.cross-icon {
+  width: 18px;
+  height: 18px;
+  fill: #000;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close:hover .cross-icon {
+  fill: var(--accent-color);
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: var(--title-text-color);
+
+  margin-bottom: 12px;
+}
+
+.consent {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+
+  color: var(--primary-text-color);
+}
+
+.agreement {
+  color: var(--accent-color);
+}
+
+.form {
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-consent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.form-label {
+  position: relative;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.form-group .form-icons {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  transform: translateY(35px);
+
+  fill: var(--title-text-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-group:hover .form-icons,
+.form-group:focus .form-icons {
+  fill: var(--accent-color);
+}
+
+.form-input {
+  height: 40px;
+  margin: 0;
+  padding: 12px;
+  padding-left: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:hover,
+.form-input:focus {
+  border-color: var(--accent-color);
+}
+
+.form-input::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.form-group textarea {
+  resize: none;
+  height: 120px;
+  padding: 12px 16px;
+}
+
+.form-consent .checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.consent {
+  display: flex;
+  align-items: center;
+}
+
+.icon-check {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+  background-image: url(../images/border-check.svg);
+}
+
+.checkbox:checked + .icon-check {
+  background-color: var(--accent-color);
+  background-image: url(../images/check.svg);
+}
+
+.form .order {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* Особенности */
@@ -698,15 +847,45 @@ h3 {
   color: var(--primary-bgc);
 }
 
+.footer-networks .networks-list {
+  justify-content: left;
+}
+
 .flexbox {
   display: flex;
+  justify-content: space-between;
   align-items: baseline;
 }
 
-.content-box:not(:last-child) {
-  margin-right: 70px;
+.content-box {
+  flex-basis: calc((50% - 45px) / 2);
+}
+
+.content-box:last-child {
+  flex-basis: calc(50% - 15px);
 }
 
 .footer-networks .network-link {
   fill: var(--primary-bgc);
+}
+
+.footer-form input {
+  height: 50px;
+  width: 350px;
+  margin-right: 10px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: var(--alternative-bgc);
+}
+
+.footer-form .order::after {
+  content: "";
+  background-image: url(../images/icon-send.svg);
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 10px;
 }
