@@ -73,6 +73,8 @@ h3 {
   --card-set-gap: 30px;
   --item-network-gap: 10px;
   --base-icon-color: #afb1b8;
+
+  --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .conteiner {
@@ -134,8 +136,7 @@ h3 {
   font-size: 14px;
   line-height: 1.14;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--animation), fill var(--animation);
 }
 
 .header-contacts .link {
@@ -253,7 +254,7 @@ h3 {
 
   cursor: pointer;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--animation);
 }
 
 .order:hover,
@@ -273,7 +274,7 @@ h3 {
   background-color: rgba(0, 0, 0, 0.3);
   opacity: 1;
 
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--animation);
 }
 
 .backdrop.is-hidden {
@@ -306,7 +307,7 @@ h3 {
   background-color: var(--primary-bgc);
   color: var(--primary-text-color);
 
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--animation);
 }
 
 .close {
@@ -331,7 +332,7 @@ h3 {
   height: 18px;
   fill: #000;
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--animation);
 }
 
 .close:hover .cross-icon {
@@ -395,7 +396,7 @@ h3 {
 
   fill: var(--title-text-color);
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--animation);
 }
 
 .form-group:hover .form-icons,
@@ -413,7 +414,7 @@ h3 {
   border-radius: 4px;
   cursor: pointer;
 
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color var(--animation);
 }
 
 .form-input:hover {
@@ -568,7 +569,7 @@ h3 {
   transform: translatey(100%);
   background-color: rgba(47, 48, 58, 0.8);
 
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--animation);
 }
 
 .gallery-list .overlay > p {
@@ -638,7 +639,7 @@ h3 {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--animation);
 }
 
 .item-network + .item-network {
@@ -649,8 +650,7 @@ h3 {
   fill: var(--base-icon-color);
   background-color: rgba(255, 255, 255, 0.1);
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--animation), background-color var(--animation);
 }
 
 .network-link:hover,
@@ -684,8 +684,7 @@ h3 {
   border-radius: 4px;
   fill: var(--base-icon-color);
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--animation), border var(--animation);
 }
 
 .clients-list-item .client-link:hover,
@@ -717,9 +716,8 @@ h3 {
   cursor: pointer;
   border-radius: 4px;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--animation), color var(--animation),
+    box-shadow var(--animation);
 }
 
 .button:hover,
@@ -743,7 +741,7 @@ h3 {
   margin-left: var(--card-set-gap);
   margin-top: var(--card-set-gap);
 
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--animation);
 }
 
 .card-set-item:hover,
@@ -790,8 +788,7 @@ h3 {
   opacity: 0;
   transform: translatey(100%);
 
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--animation), opacity var(--animation);
 }
 
 .card-set-item:hover .card-overlay,
@@ -819,7 +816,7 @@ h3 {
 .footer-contacts .link {
   color: rgba(255, 255, 255, 0.6);
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--animation);
 }
 
 .footer-contacts .link:hover,
